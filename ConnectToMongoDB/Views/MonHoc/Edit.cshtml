@@ -1,0 +1,36 @@
+﻿@model ConnectToMongoDB.Models.MonHoc
+
+@{
+    ViewData["Title"] = "Sửa thông tin môn học";
+}
+
+<h1>Sửa thông tin môn học</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="MaMH" class="control-label">Mã môn học</label>
+                <input asp-for="MaMH" class="form-control" />
+                <span asp-validation-for="MaMH" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TenMH" class="control-label">Tên môn học</label>
+                <input asp-for="TenMH" class="form-control" />
+                <span asp-validation-for="TenMH" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Lưu" class="btn btn-primary" style="width:150px" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a style="width:150px" class="btn btn-outline-danger" asp-action="Index">Quay lại</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

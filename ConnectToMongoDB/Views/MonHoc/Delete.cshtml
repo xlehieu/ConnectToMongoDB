@@ -1,0 +1,31 @@
+﻿@model ConnectToMongoDB.Models.MonHoc
+
+@{
+    ViewData["Title"] = "Xóa thông tin môn học";
+}
+
+<h1>Xóa thông tin môn học</h1>
+
+<h3>Bạn có muốn xóa thông tin này?</h3>
+<div>
+    <h4>MonHoc</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Mã môn học
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MaMH)
+        </dd>
+        <dt class = "col-sm-2">
+            Tên môn học
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TenMH)
+        </dd>
+    </dl>
+    <form asp-action="Delete">
+        <input type="submit" value="Xóa" class="btn btn-danger" /> |
+        <a style="width:150px" class="btn btn-outline-danger" asp-action="Index">Quay lại</a>
+    </form>
+</div>

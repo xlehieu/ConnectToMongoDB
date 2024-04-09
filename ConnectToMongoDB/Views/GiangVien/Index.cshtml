@@ -1,0 +1,38 @@
+﻿@model IEnumerable<ConnectToMongoDB.Models.GiangVien>
+@{
+    ViewData["Title"] = "Index";
+}
+<h1>Danh sách giảng viên</h1>
+<p>
+    <a class="btn btn-primary btn-lg" style="text-decoration:none" asp-action="Create">Thêm mới</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Mã giảng viên
+            </th>
+            <th>
+                Tên giảng viên
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaGV)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenGV)
+            </td>
+            <td>
+                @Html.ActionLink("Sửa", "Edit", new { id=item._id}) |
+                @Html.ActionLink("Chi tiết", "Details", new {id = item._id}) |
+                @Html.ActionLink("Xóa", "Delete", new { id=item._id })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
